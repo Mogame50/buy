@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register an Order</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <form action="thank-you.html" method="get" onsubmit="return validateForm()">
+           <h2>Register an Order</h2>  
+           <div class="form-group">
+                <label for="full_name">الاسم بالكامل:</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">🌍العنوان:</label>
+                <input type="text" id="address" placeholder="محافظه,المدينه,الحى السكنى,اسم الشارع" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">📞رقم الموبايل:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="01xxxxxxxxx" pattern="[0-9]{10,15}" title="Please enter a valid phone number (10-15 digits) ">
+            </div>
+
+            <div class="form-group">
+                <label for="email">✉البريد الإلكتروني (اختياري):</label>
+                <input type="email" id="email" placeholder="mon123@gmail.com" name="email">
+            </div>
+
+            <div class="form-group">
+                <button type="button" ><a href="https://ipn.eg/S/mofaragai/instapay/3UJJsm" >للدفع💳</a></button >
+            </div>
+
+            <div class="form-group">
+
+                <label for="email"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdbOSsHZy_ZFftInJPR7SoLzpnTBLk_e1BAQ-15Cg2eKCa5Fw/viewform?usp=header">من فضلك قم بتاكيد بيانات الطلب من هنا </a></label>
+         
+            </div>
+
+
+
+  <div class="button-container">
+              <input id="submit" type="submit" value="ارسال الطلب">
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

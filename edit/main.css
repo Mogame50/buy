@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    direction: rtl;
+    text-align: right;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* عشان الصور تنزل سطر جديد لو كتير */
+    gap: 25px; /* مسافة بين الصور */
+    justify-content: center;
+}
+
+.product-image-container {
+    width: 320px; /* عرض الكارت اللي جواه الصورة */
+    height: 220px; /* طول الكارت */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* مهم جداً عشان الصورة لما تكبر متخرجش بره الكارت */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* عشان لو هتحط overlay */
+    transition: all 0.3s ease; /* حركة سلسة لكل التغيرات */
+}
+
+.product-image-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* ممكن تعمل تأثير رفع بسيط للكارت كله */
+    transform: translateY(-5px);
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عشان الصورة تملأ المساحة بدون تشوه */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* حركة التكبير السلسة */
+    display: block; /* مهم لإزالة أي مسافات إضافية تحت الصورة */
+}
+
+.product-image-container:hover img {
+    transform: scale(1.1); /* تكبير الصورة بنسبة 10% */
+}
+
+/* لو عايز تضيف طبقة تظهر مع التكبير (اختياري) */
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product-image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.image-overlay button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-overlay button:hover {
+    background-color: #0056b3;
+}
